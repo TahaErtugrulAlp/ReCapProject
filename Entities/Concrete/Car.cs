@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
+    //IEntity sen bir veri tabanı nesnesisin demek.
     public class Car:IEntity
     {
         public int CarId { get; set; }

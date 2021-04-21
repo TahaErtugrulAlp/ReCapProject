@@ -22,10 +22,28 @@ namespace Business.Concrete
 
         public List<Car> GetAll()
         {
-            //İş kodları
+            //İş kodları yazılır(if else kullanılır)
+
 
 
             return _carDal.GetAll();
         }
+
+        public List<Car> GetByBrandId(int id)
+        {
+            return _carDal.GetAll(p=>p.BrandId==id);
+        }
+
+        public List<Car> GetAllByCarId(int id)
+        {
+            return _carDal.GetAll(p=>p.CarId==id);
+        }
+
+        public List<Car> GetByColorId(int id)
+        {
+            return _carDal.GetAll(p=>p.ColorId==id);
+        }
+
+        
     }
 }

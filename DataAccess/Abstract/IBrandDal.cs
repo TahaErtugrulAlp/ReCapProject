@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    // Car nesnesi ile ilgili veri tabanında yapacağım  operasyonları içeren interface
-    public interface ICarDal:IEntityRepository<Car>
+    public interface IBrandDal:IEntityRepository<Brand>
     {
-
-
+       
 
     }
 }

@@ -3,12 +3,13 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.InMemory
 {
-    //Bellekte çalışacağız.
+    //Bellekte çalışacağız.Veri ulaşım kodlarının yazılacağı yer 
     public class InMemoryCarDal : ICarDal
     {
         List<Car> _cars; //nameing convention
@@ -49,17 +50,11 @@ namespace DataAccess.Concrete.InMemory
             return _cars;
         }
 
-
         public List<Car> GetAllById(int CarId)
         {
-            return _cars.Where(c => c.CarId == CarId).ToList();
+            return _cars.Where(c=>c.CarId == CarId).ToList();
         }
-
-        public List<Car> GetAllById()
-        {
-            throw new NotImplementedException();
-        }
-
+    
         public void Update(Car car)
         {
             //Gönderdiğim ürüm id'sine sahip olan listedeki ürünü bul.
@@ -71,6 +66,16 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.Description = car.Description;
             carToUpdate.ModelYear = car.ModelYear;
 
+        }
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }
